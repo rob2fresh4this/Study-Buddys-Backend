@@ -1,0 +1,11 @@
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Study Buddys Backend.exe
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\appsettings.Development.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\appsettings.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Study Buddys Backend.deps.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Study Buddys Backend.runtimeconfig.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Study Buddys Backend.pdb
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Microsoft.OpenApi.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

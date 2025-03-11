@@ -1,0 +1,32 @@
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\appsettings.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Study Buddys Backend.exe
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Study Buddys Backend.deps.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Study Buddys Backend.runtimeconfig.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Study Buddys Backend.pdb
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.csproj.AssemblyReference.cache
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.AssemblyInfoInputs.cache
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.AssemblyInfo.cs
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.csproj.CoreCompileInputs.cache
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets\msbuild.Study Buddys Backend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets\msbuild.build.Study Buddys Backend.props
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Study Buddys Backend.props
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Study Buddys Backend.props
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\scopedcss\bundle\Study Buddys Backend.styles.css
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Bu.F44488C4.Up2Date
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\refint\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.pdb
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\Study Buddys Backend.genruntimeconfig.cache
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Debug\net8.0\ref\Study Buddys Backend.dll
