@@ -1,5 +1,8 @@
-
+using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
 using Study_Buddys_Backend.Context;
+using Study_Buddys_Backend.Models;
+using Study_Buddys_Backend.Models.DTOS;
 
 namespace Study_Buddys_Backend.Services
 {
@@ -12,6 +15,36 @@ namespace Study_Buddys_Backend.Services
             _dataContext = dataContext;
         }
 
-        
+        public async Task<bool> RegisterUser(UserDTO user)
+        {
+            if(await DoseUserExist(user.Username)) return false;
+            UserModels addUser = new();
+            PasswordDTO encryptedPassword = HashPassword(user.Password);
+            addUser.Username = user.Username;
+            addUser.Hash = encryptedPassword.Hash;
+            addUser.Salt = encryptedPassword.Salt;
+
+            await _dataContext.Users.AddAsync(addUser);
+            return await _dataContext.SaveChangesAsync() != 0;
+        }
+
+        public async Task<bool> DoseUserExist(string username)
+        {
+            return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username) != null;
+        }
+
+        private static PasswordDTO HashPassword(string password){
+            byte[] saltBytes = RandomNumberGenerator.GetBytes(64);
+            string salt = Convert.ToBase64String(saltBytes);
+
+            string hash = "";
+            using (var deryveBytes = new Rfc2898DeriveBytes(password, saltBytes, 310000, HashAlgorithmName.SHA256))
+            {
+                byte[] hashBytes = deryveBytes.GetBytes(32);
+                hash = Convert.ToBase64String(hashBytes);
+            }
+
+            return new PasswordDTO { Salt = salt, Hash = hash };
+        }
     }
 }
