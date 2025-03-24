@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Study_Buddys_Backend.Context;
 using Study_Buddys_Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<UserServices>();
+
+var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
