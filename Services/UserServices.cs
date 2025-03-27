@@ -64,7 +64,7 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username);
         }
 
-        public string serverUrl = "";
+        public string serverUrl = "https://studybuddies-g9bmedddeah6aqe7.westus-01.azurewebsites.net/";
 
         private string GenerateJWTToken (List<Claim> claims){
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
