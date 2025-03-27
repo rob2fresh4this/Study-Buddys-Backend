@@ -32,6 +32,8 @@ builder.Services.AddCors(Options =>
 var secretKey = builder.Configuration["Jwt:Key"];
 var signingCredentials = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
+string serverUrl = "";
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,8 +47,8 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
 
-        ValidIssuer = "https://grijalvablog-h5bqgegegkbxd3hs.westus-01.azurewebsites.net",
-        ValidAudience = "https://grijalvablog-h5bqgegegkbxd3hs.westus-01.azurewebsites.net",
+        ValidIssuer = serverUrl,
+        ValidAudience = serverUrl,
         IssuerSigningKey = signingCredentials
     };
 });

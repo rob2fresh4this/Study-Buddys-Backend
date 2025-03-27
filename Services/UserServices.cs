@@ -64,18 +64,22 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username);
         }
 
+        public string serverUrl = "";
+
         private string GenerateJWTToken (List<Claim> claims){
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
             var tokenOptions = new JwtSecurityToken(
-                issuer: "https://localhost:5001",
-                audience: "https://localhost:5001",
+                issuer: serverUrl,
+                audience: serverUrl,
                 claims: claims,
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: signinCredentials
             );
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
         }
+
+        
 
         private bool VerifyPassword (string password, string salt, string hash){
             byte[] saltBytes = Convert.FromBase64String(salt);
