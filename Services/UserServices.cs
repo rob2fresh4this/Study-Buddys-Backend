@@ -144,6 +144,31 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.SaveChangesAsync() != 0;
         }
 
+        public async Task<bool> RemoveCommunityFromUserAsync(int userId, int communityId)
+        {
+            // Retrieve the user by ID
+            var user = await GetUserByIdAsync(userId);
+
+            if (user == null) return false; // If user doesn't exist, return false
+
+            // Initialize the lists if they are null
+            user.OwnedCommunitys ??= new List<int>();
+            user.JoinedCommunitys ??= new List<int>();
+            user.CommunityRequests ??= new List<int>();
+
+            // Remove the community from the user's lists (if it exists)
+            user.OwnedCommunitys.Remove(communityId);
+            user.JoinedCommunitys.Remove(communityId);
+            user.CommunityRequests.Remove(communityId);
+
+            // Save changes to the database
+            _dataContext.Users.Update(user);
+
+            // Return true if changes were saved successfully, otherwise false
+            return await _dataContext.SaveChangesAsync() > 0;
+        }
+
+
         public async Task<UserInfoDto> GetAllUserInfoAsync(int userId)
         {
             var user = await _dataContext.Users

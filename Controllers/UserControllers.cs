@@ -67,5 +67,17 @@ namespace Study_Buddys_Backend.Controllers
             return Ok(new { Success = true, Message = "Community added to user successfully" });
         }
 
+        [HttpDelete("RemoveCommunityFromUser/{id}/{communityId}")]
+        public async Task<IActionResult> RemoveCommunityFromUser(int id, int communityId)
+        {
+            var success = await _userServices.RemoveCommunityFromUserAsync(id, communityId);
+
+            if (!success)
+            {
+                return BadRequest(new { Success = false, Message = "Failed to remove community from user" });
+            }
+            return Ok(new { Success = true, Message = "Community removed from user successfully" });
+        }
+
     }
 }
