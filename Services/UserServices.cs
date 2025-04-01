@@ -90,9 +90,19 @@ namespace Study_Buddys_Backend.Services
             }
         }
 
-        public async Task<UserInfoDTO> GetUserInfoByUsername(string username){
+        private async Task<UserModels> GetUserByID(int id){
+            return await _dataContext.Users.SingleOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<bool> UpdateUsersCommunitys(string username){
             UserModels user = await GetByUsername(username);
-            return new UserInfoDTO { Username = user.Username, Id = user.Id };
+            if(user == null) return false;
+            // TODO: add the communitys that the user owns
+            
+            // TODO: add the communitys that the user joined
+
+            // TODO: add the communitys that the user requested to join
+            return await _dataContext.SaveChangesAsync() != 0;
         }
     }
 }

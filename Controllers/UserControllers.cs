@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Study_Buddys_Backend.Models;
 using Study_Buddys_Backend.Models.DTOS;
 using Study_Buddys_Backend.Services;
 
@@ -29,5 +30,8 @@ namespace Study_Buddys_Backend.Controllers
             if (token != null) return Ok(new { Success = true, Token = token });
             return BadRequest(new { Success = false });
         }
+
+        
+
     }
 }
