@@ -1,3 +1,4 @@
+
 namespace Study_Buddys_Backend.Models
 {
     public class CommunityModel
