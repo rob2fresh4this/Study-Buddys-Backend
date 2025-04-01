@@ -33,8 +33,8 @@ builder.Services.AddCors(Options =>
 var secretKey = builder.Configuration["Jwt:Key"];
 var signingCredentials = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
-// string serverUrl = "https://studybuddies-g9bmedddeah6aqe7.westus-01.azurewebsites.net/";
-string serverUrl = "https://localhost:5233/"; // Localhost URL for testing
+string serverUrl = "https://studybuddies-g9bmedddeah6aqe7.westus-01.azurewebsites.net/";
+string localHostUrl = "https://localhost:5233/"; // Localhost URL for testing
 
 builder.Services.AddAuthentication(options =>
 {
@@ -49,8 +49,18 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
 
-        ValidIssuer = serverUrl,
-        ValidAudience = serverUrl,
+        ValidIssuers = new List<string>
+        {
+            serverUrl,
+            localHostUrl
+        },
+
+        // Allow multiple audiences
+        ValidAudiences = new List<string>
+        {
+            serverUrl,
+            localHostUrl
+        },
         IssuerSigningKey = signingCredentials
     };
 });

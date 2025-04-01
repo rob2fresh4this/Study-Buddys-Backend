@@ -3,7 +3,7 @@ namespace Study_Buddys_Backend.Models
 {
     public class CommunityModel
     {
-        public int CommunityID { get; set; }
+        public int Id { get; set; }
         public int CommunityOwnerID { get; set; }
         public bool CommunityIfOwner { get; set; }
         public bool CommunityIsPublic { get; set; }

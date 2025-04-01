@@ -19,8 +19,11 @@ namespace Study_Buddys_Backend.Controllers
         public async Task<IActionResult> GetAllCommunities()
         {
             var communities = await _communityServices.GetAllCommunitiesAsync();
-            if (communities != null) return Ok(new { Success = true, Communities = communities });
-            return BadRequest(new { Success = false, Message = "No communities found" });
+            if (communities == null || !communities.Any())
+            {
+                return BadRequest(new { Success = false, Message = "No communities found or error retrieving data" });
+            }
+            return Ok(new { Success = true, Communities = communities });
         }
 
         [HttpPost("addCommunity")]
