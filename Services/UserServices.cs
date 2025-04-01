@@ -23,7 +23,7 @@ namespace Study_Buddys_Backend.Services
 
         public async Task<bool> RegisterUser(UserDTO user)
         {
-            if(await DoseUserExist(user.Username)) return false;
+            if (await DoseUserExist(user.Username)) return false;
             UserModels addUser = new();
             PasswordDTO encryptedPassword = HashPassword(user.Password);
             addUser.Username = user.Username;
@@ -39,7 +39,8 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username) != null;
         }
 
-        private static PasswordDTO HashPassword(string password){
+        private static PasswordDTO HashPassword(string password)
+        {
             byte[] saltBytes = RandomNumberGenerator.GetBytes(64);
             string salt = Convert.ToBase64String(saltBytes);
 
@@ -53,21 +54,24 @@ namespace Study_Buddys_Backend.Services
             return new PasswordDTO { Salt = salt, Hash = hash };
         }
 
-        public async Task<string> LoginUser(UserDTO user){
+        public async Task<string> LoginUser(UserDTO user)
+        {
             UserModels userToLogin = await GetByUsername(user.Username);
-            if(userToLogin == null) return null;
-            if(!VerifyPassword(user.Password, userToLogin.Salt, userToLogin.Hash)) return null;
+            if (userToLogin == null) return null;
+            if (!VerifyPassword(user.Password, userToLogin.Salt, userToLogin.Hash)) return null;
             return GenerateJWTToken(new List<Claim>());
         }
 
-        private async Task<UserModels> GetByUsername(string username){
+        private async Task<UserModels> GetByUsername(string username)
+        {
             return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username);
         }
 
         public string serverUrl = "https://studybuddies-g9bmedddeah6aqe7.westus-01.azurewebsites.net/";
         // public string serverUrl = "https://localhost:5233/"; // Localhost URL for testing
 
-        private string GenerateJWTToken (List<Claim> claims){
+        private string GenerateJWTToken(List<Claim> claims)
+        {
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
             var tokenOptions = new JwtSecurityToken(
@@ -80,9 +84,10 @@ namespace Study_Buddys_Backend.Services
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
         }
 
-        
 
-        private bool VerifyPassword (string password, string salt, string hash){
+
+        private bool VerifyPassword(string password, string salt, string hash)
+        {
             byte[] saltBytes = Convert.FromBase64String(salt);
             using (var deryveBytes = new Rfc2898DeriveBytes(password, saltBytes, 310000, HashAlgorithmName.SHA256))
             {
@@ -90,19 +95,76 @@ namespace Study_Buddys_Backend.Services
             }
         }
 
-        private async Task<UserModels> GetUserByID(int id){
-            return await _dataContext.Users.SingleOrDefaultAsync(x => x.Id == id);
+        public async Task<UserModels> GetUserByIdAsync(int id)
+        {
+            return await _dataContext.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<bool> UpdateUsersCommunitys(string username){
-            UserModels user = await GetByUsername(username);
-            if(user == null) return false;
-            // TODO: add the communitys that the user owns
-            
-            // TODO: add the communitys that the user joined
+        public async Task<bool> EditUserCommunitiesAsync(int userId, List<int>? owned, List<int>? joined, List<int>? requests)
+        {
+            // Retrieve the user by ID
+            UserModels user = await GetUserByIdAsync(userId);
+            if (user == null) return false;
 
-            // TODO: add the communitys that the user requested to join
+            // Update the user's communities only if the lists are provided
+            if (owned != null)
+                user.OwnedCommunitys = owned;
+            if (joined != null)
+                user.JoinedCommunitys = joined;
+            if (requests != null)
+                user.CommunityRequests = requests;
+
+            // Mark the user entity as modified and save changes
+            _dataContext.Users.Update(user);
             return await _dataContext.SaveChangesAsync() != 0;
         }
+
+        public async Task<bool> AddCommunityToUserAsync(int userId, List<int>? owned, List<int>? joined, List<int>? requests)
+        {
+            // Ensure the user exists
+            UserModels user = await GetUserByIdAsync(userId);
+            if (user == null) return false;
+
+            // Add the communities to the user if they are not null
+            if (owned != null && owned.Any())
+            {
+                user.OwnedCommunitys.AddRange(owned);
+            }
+            if (joined != null && joined.Any())
+            {
+                user.JoinedCommunitys.AddRange(joined);
+            }
+            if (requests != null && requests.Any())
+            {
+                user.CommunityRequests.AddRange(requests);
+            }
+
+            // Update the user and save changes to the database
+            _dataContext.Users.Update(user);
+            return await _dataContext.SaveChangesAsync() != 0;
+        }
+
+        public async Task<UserInfoDto> GetAllUserInfoAsync(int userId)
+        {
+            var user = await _dataContext.Users
+                .Where(u => u.Id == userId)
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+                return null;  // User not found
+
+            // Map the user data to the UserInfoDto
+            return new UserInfoDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                OwnedCommunitys = user.OwnedCommunitys ?? new List<int>(),
+                JoinedCommunitys = user.JoinedCommunitys ?? new List<int>(),
+                CommunityRequests = user.CommunityRequests ?? new List<int>()
+            };
+        }
+
+
+
     }
 }

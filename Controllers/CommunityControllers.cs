@@ -32,5 +32,12 @@ namespace Study_Buddys_Backend.Controllers
             if (await _communityServices.AddCommunityAsync(community)) return Ok(new { Success = true });
             return BadRequest(new { Success = false });
         }
+
+        [HttpPut("updateCommunity")]
+        public async Task<IActionResult> UpdateCommunity([FromBody] CommunityModel community)
+        {
+            if (await _communityServices.UpdateCommunityAsync(community)) return Ok(new { Success = true });
+            return BadRequest(new { Success = false });
+        }
     }
 }
