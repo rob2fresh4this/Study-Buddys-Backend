@@ -85,7 +85,9 @@ namespace Study_Buddys_Backend.Services
 
             // Ensure list is initialized
             if (community.CommunityRequests == null)
+            {
                 community.CommunityRequests = new List<int>();
+            }
 
             if (!community.CommunityRequests.Contains(userId))
             {
@@ -108,6 +110,26 @@ namespace Study_Buddys_Backend.Services
                 return await _dataContext.SaveChangesAsync() > 0;
             }
             return false;
+        }
+
+        public async Task<bool> ApproveRequestAsync(int communityId, int userId, bool approve)
+        {
+            var community = await _dataContext.Communitys.FindAsync(communityId);
+            if (community == null) return false;
+
+            if (approve)
+            {
+                // Add user to members
+                await AddMemberToCommunityAsync(communityId, userId);
+                await RemoveRequestFromCommunityAsync(communityId, userId);
+            }
+            else
+            {
+                // Remove user from requests
+                await RemoveRequestFromCommunityAsync(communityId, userId);
+            }
+
+            return true;
         }
 
     }

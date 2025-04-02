@@ -82,5 +82,15 @@ namespace Study_Buddys_Backend.Controllers
             if (await _communityServices.RemoveRequestFromCommunityAsync(communityId, userId)) return Ok(new { Success = true });
             return BadRequest(new { Success = false, message = "Failed to remove request from community" });
         }
+
+        [HttpPut("approveRequest/{communityId}/{userId}/{approveORnot}")]
+        public async Task<IActionResult> ApproveRequest(int communityId, int userId, bool approveORnot)
+        {
+            if (await _communityServices.ApproveRequestAsync(communityId, userId, approveORnot))
+            {
+                return Ok(new { Success = true, Message = approveORnot ? "Request approved" : "Request denied" });
+            }
+            return BadRequest(new { Success = false, message = "Failed to approve request" });
+        }
     }
 }
