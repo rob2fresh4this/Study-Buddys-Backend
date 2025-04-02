@@ -34,10 +34,53 @@ namespace Study_Buddys_Backend.Controllers
         }
 
         [HttpPut("updateCommunity")]
-        public async Task<IActionResult> UpdateCommunity([FromBody] CommunityModel community)
+        public async Task<IActionResult> UpdateCommunity([FromBody] CommunityModel updatedCommunity)
         {
-            if (await _communityServices.UpdateCommunityAsync(community)) return Ok(new { Success = true });
-            return BadRequest(new { Success = false });
+            var existingCommunity = await _communityServices.GetCommunityByIdAsync(updatedCommunity.Id);
+            if (existingCommunity == null)
+            {
+                return NotFound(new { Success = false, Message = "Community not found" });
+            }
+
+            // Preserve existing members and requests
+            updatedCommunity.CommunityMembers = existingCommunity.CommunityMembers;
+            updatedCommunity.CommunityRequests = existingCommunity.CommunityRequests;
+
+            if (await _communityServices.UpdateCommunityAsync(updatedCommunity))
+            {
+                return Ok(new { Success = true });
+            }
+
+            return BadRequest(new { Success = false, Message = "Failed to update community" });
+        }
+
+
+        [HttpPost("addMemberToCommunity/{communityId}/{userId}")]
+        public async Task<IActionResult> AddMemberToCommunity(int communityId, int userId)
+        {
+            if (await _communityServices.AddMemberToCommunityAsync(communityId, userId)) return Ok(new { Success = true });
+            return BadRequest(new { Success = false, message = "Failed to add member to community" });
+        }
+
+        [HttpDelete("removeMemberFromCommunity/{communityId}/{userId}")]
+        public async Task<IActionResult> RemoveMemberFromCommunity(int communityId, int userId)
+        {
+            if (await _communityServices.RemoveMemberFromCommunityAsync(communityId, userId)) return Ok(new { Success = true });
+            return BadRequest(new { Success = false, message = "Failed to remove member from community" });
+        }
+
+        [HttpPost("addRequestToCommunity/{communityId}/{userId}")]
+        public async Task<IActionResult> AddRequestToCommunity(int communityId, int userId)
+        {
+            if (await _communityServices.AddRequestToCommunityAsync(communityId, userId)) return Ok(new { Success = true });
+            return BadRequest(new { Success = false, message = "Failed to add request to community" });
+        }
+
+        [HttpDelete("removeRequestFromCommunity/{communityId}/{userId}")]
+        public async Task<IActionResult> RemoveRequestFromCommunity(int communityId, int userId)
+        {
+            if (await _communityServices.RemoveRequestFromCommunityAsync(communityId, userId)) return Ok(new { Success = true });
+            return BadRequest(new { Success = false, message = "Failed to remove request from community" });
         }
     }
 }
