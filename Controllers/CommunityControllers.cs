@@ -105,5 +105,14 @@ namespace Study_Buddys_Backend.Controllers
             return BadRequest(new { Success = false, message = "Failed to clear community members" });
         }
 
+        [HttpPut("EditCommunityRole/{communityId}/{userId}/{role}")]
+        public async Task<IActionResult> EditCommunityRole(int communityId, int userId, string role)
+        {
+            if (await _communityServices.EditCommunityMemberRoleAsync(communityId, userId, role))
+                return Ok(new { Success = true });
+
+            return BadRequest(new { Success = false, message = "Failed to edit community role" });
+        }
+
     }
 }

@@ -165,6 +165,35 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.SaveChangesAsync() > 0; // Ensure changes are saved
         }
 
+        public async Task<bool> EditCommunityMemberRoleAsync(int communityId, int userId, string newRole)
+        {
+            var community = await GetCommunityByIdAsync(communityId);
+
+            if (community == null) return false;
+
+            var member = community.CommunityMembers.FirstOrDefault(m => m.UserId == userId);
+
+            if (member != null)
+            {
+                // Validate role
+                if (!IsValidRole(newRole)) return false;
+
+                member.Role = newRole;
+
+                _dataContext.Entry(member).State = EntityState.Modified;
+
+                return await _dataContext.SaveChangesAsync() > 0;
+            }
+
+            return false;
+        }
+
+        // Helper method for role validation
+        private bool IsValidRole(string role)
+        {
+            var validRoles = new HashSet<string> { "student", "owner", "ta", "teacher" };
+            return validRoles.Contains(role.ToLower());
+        }
 
 
     }
