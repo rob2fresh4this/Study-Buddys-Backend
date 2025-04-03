@@ -92,5 +92,18 @@ namespace Study_Buddys_Backend.Controllers
             }
             return BadRequest(new { Success = false, message = "Failed to approve request" });
         }
+
+
+
+        // only for testing purposes
+        [HttpDelete("clearCommunityMembers/{communityId}")]
+        public async Task<IActionResult> ClearCommunityMembers(int communityId)
+        {
+            if (await _communityServices.ClearCommunityMembersAsync(communityId))
+                return Ok(new { Success = true });
+
+            return BadRequest(new { Success = false, message = "Failed to clear community members" });
+        }
+
     }
 }
