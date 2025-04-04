@@ -16,6 +16,16 @@ namespace Study_Buddys_Backend.Controllers
             _userServices = userServices;
         }
 
+        [HttpGet("getAllUsers")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userServices.GetAllUsersAsync();
+            if (users == null || !users.Any())
+                return NotFound(new { Success = false, Message = "No users found" });
+
+            return Ok(new { Success = true, Users = users });
+        }
+
         [HttpGet("getUserInfo/{id}")]
         public async Task<IActionResult> GetUserInfo(int id)
         {

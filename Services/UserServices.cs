@@ -21,6 +21,20 @@ namespace Study_Buddys_Backend.Services
             _config = config;
         }
 
+        public async Task<List<UserInfoDto>> GetAllUsersAsync()
+        {
+            return await _dataContext.Users
+                .Select(user => new UserInfoDto
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    OwnedCommunitys = user.OwnedCommunitys ?? new List<int>(),
+                    JoinedCommunitys = user.JoinedCommunitys ?? new List<int>(),
+                    CommunityRequests = user.CommunityRequests ?? new List<int>()
+                })
+                .ToListAsync();
+        }
+
         public async Task<bool> RegisterUser(UserDTO user)
         {
             if (await DoseUserExist(user.Username)) return false;
