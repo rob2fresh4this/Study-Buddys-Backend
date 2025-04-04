@@ -570,3 +570,11 @@ C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Ba
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Debug\net8.0\Study Buddys Backend.pdb
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Debug\net8.0\Study Buddys Backend.genruntimeconfig.cache
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Debug\net8.0\ref\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
