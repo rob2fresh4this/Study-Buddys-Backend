@@ -81,7 +81,7 @@ namespace Study_Buddys_Backend.Services
             return await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == username);
         }
 
-        public string serverUrl = "https://studybuddies-g9bmedddeah6aqe7.westus-01.azurewebsites.net/";
+        public string serverUrl = "https://study-buddys-backend.azurewebsites.net";
         // public string serverUrl = "https://localhost:5233/"; // Localhost URL for testing
 
         private string GenerateJWTToken(List<Claim> claims)
