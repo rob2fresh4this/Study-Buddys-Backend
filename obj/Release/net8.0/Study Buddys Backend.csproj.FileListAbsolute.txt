@@ -32,11 +32,6 @@ C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Ba
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study Buddys Backend\obj\Release\net8.0\ref\Study Buddys Backend.dll
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\appsettings.Development.json
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\appsettings.json
-C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\web.config
-C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\appsettings.Development.json
-C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\appsettings.json
-C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\Study Buddys Backend.deps.json
-C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\Study Buddys Backend.runtimeconfig.json
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\Study Buddys Backend.exe
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\Study Buddys Backend.deps.json
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\Study Buddys Backend.runtimeconfig.json
@@ -173,3 +168,8 @@ C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Ba
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Release\net8.0\Study Buddys Backend.pdb
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Release\net8.0\Study Buddys Backend.genruntimeconfig.cache
 C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\obj\Release\net8.0\ref\Study Buddys Backend.dll
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\web.config
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\appsettings.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\Study Buddys Backend.deps.json
+C:\Users\grijr\VScode\CodeStack 24-25\Season 4 Fullstack Pratice\Study-Buddys-Backend\bin\Release\net8.0\publish\Study Buddys Backend.runtimeconfig.json
